@@ -1,0 +1,15 @@
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.exe
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.deps.json
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.runtimeconfig.json
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.runtimeconfig.dev.json
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.dll
+C:\Users\Bilbo\source\repos\G22App1\bin\Debug\netcoreapp3.1\G22App1.pdb
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.csprojAssemblyReference.cache
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.csproj.GenerateResource.cache
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.AssemblyInfoInputs.cache
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.AssemblyInfo.cs
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.csproj.CoreCompileInputs.cache
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.dll
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.pdb
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.genruntimeconfig.cache
+C:\Users\Bilbo\source\repos\G22App1\obj\Debug\netcoreapp3.1\G22App1.FormApp.resources
