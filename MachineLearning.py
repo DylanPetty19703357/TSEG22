@@ -163,7 +163,7 @@ def ML():
 
     # READS FILE
 
-    with open(r"C:\Users\Student\Documents\Uni\Year 2\Team Software Engineering (CMP2804M)\Assessment 3\extract_audio_features.csv") as f:
+    with open(r"C:\Users\Meg\Downloads\TSEG22-Machine-Learning (2)\TSEG22-Machine-Learning\audio_features.csv") as f:
 
         data = pd.read_csv(f, header=0, encoding="utf-8-sig", engine="python")
 
