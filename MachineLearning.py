@@ -15,15 +15,15 @@ import csv
 
 import pickle
 
-### source = https://www.datacamp.com/community/tutorials/decision-tree-classification-python
+### https://www.datacamp.com/community/tutorials/decision-tree-classification-python
 ### https://scikit-learn.org/stable/modules/model_persistence.html
+### https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/
+### https://commons.wikimedia.org/wiki/Category:Audio_files_of_classical_music
 
 FilePath = "sample.ogg" #Same file as this script
 TimeSeries, SampleRate = librosa.load(FilePath)
 
 # LIBROSA OUPUT #
-
-
 def features():
     #Load file
     FilePath = "sample.ogg"
@@ -163,20 +163,14 @@ def ML():
 
     # READS FILE
 
-    with open(r"C:\Users\Meg\Downloads\TSEG22-Machine-Learning (2)\TSEG22-Machine-Learning\audio_features.csv") as f:
+    data = pd.read_csv("audio_features.csv", header=0, names = ['Genre', 'Amplitude Envelope Mean', 'Root Square Mean Energy', 'Zero Crossing Rate Variance', 'Spectral Centroid Variance', 'Spectral Bandwidth Variance', 'MFCC Mean', 'MFCC Variance'])
 
-        data = pd.read_csv(f, header=0, encoding="utf-8-sig", engine="python")
-
-        data.columns = [x.encode("utf-8").decode("ascii", "ignore") for x in data.columns]
-
-        features = ['Genre', 'Amplitude Envelope Mean', 'Root Square Mean Energy', 'Zero Crossing Rate Variance', 'Spectral Centroid Variance', 'Spectral Bandwidth Variance', 'MFCC Mean', 'MFCC Variance']
-
-        print(tb(data, headers=features))
-        print()
+    print(tb(data))
+    print()
 
     # SPLITS DATA INTO TESTING AND TRAINING DATA
 
-    X = data[features]
+    X = data.drop("Genre", axis=1)
 
     Y = data.Genre
 
@@ -201,32 +195,31 @@ def ML():
 
     # SAVING MODEL
 
-    s = pickle.dumps(clf)
-
-    return s
-
-def get_song():
-    
-    with open(r"C:\Users\Student\Documents\Uni\Year 2\Team Software Engineering (CMP2804M)\Assessment 3\sample.ogg") as song:
-        print()
-        print("Song extracted")
-        print()
-
-    return song
+    pickle.dump(clf, open('model.sav', 'wb'))
 
 
-def predict(data):
+def predict():
+    model = pickle.load(open('model.sav', 'rb'))
 
-        clf2 = pickle.loads(s)
-        clf2.predict(data)
+    data = pd.read_csv("extract_audio_features.csv", header=None)
 
+    names = ["Amplitude Envelope Mean", "Root Square Mean Energy", "Zero Crossing Rate Variance", "Spectral Centroid Variance", "Spectral Bandwidth Variance", "MFCC Mean", "MFCC Variance"]
+
+    genre = model.predict(data)
+
+    if genre == 1:
+        print("Classical")
+    elif genre == 2:
+        print("Jazz")
+    else:
+        print("Unknown")
 
 
 if __name__ == "__main__":
-    features()
-    print("extracted")
-    s = ML()
-    print("learnt")
+    #ML()
+    #features()
+    predict()
+    
 
     
 
