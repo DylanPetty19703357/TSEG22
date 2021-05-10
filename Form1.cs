@@ -11,10 +11,11 @@ using System.Net.Http;
 using System.Net;
 using CsvHelper;
 using System.IO;
+using System.Globalization;
 
 namespace G22App1
 {
-   
+
 
     public partial class FormApp : Form
     {
@@ -26,21 +27,23 @@ namespace G22App1
             InitializeComponent();
         }
 
-       
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            PnlDeductions.Visible = false;
+            PnlListening.Visible = false;
+            PnlListeningFound.Visible = false;
             PnlMainMenu.Visible = true;
             PnlMainMenu.BringToFront();
         }
 
-        private async void BtnMainListenToMusic_Click(object sender, EventArgs e)
+        private void BtnMainListenToMusic_Click(object sender, EventArgs e)
         {
-            
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                InitialDirectory = @"C:\",
+                InitialDirectory = @"C:\",    //this code allows the user to browse their local files for a .ogg music file
                 Title = "Browse Music Files",
 
                 CheckFileExists = true,
@@ -58,64 +61,52 @@ namespace G22App1
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
 
-                try
-                {
-                   
-                    //  using var client = new HttpClient();
 
-                    //var values = ;
-
-                    //  var content = new FormUrlEncodedContent(values);
-
-                    //var response = await client.PostAsync("", content);
-
-                    // var responseString = await response.Content.ReadAsStringAsync();
 
                     try
                     {
                         WebClient client = new WebClient();
-                        string myFile = openFileDialog1.FileName;
+                        string myFile = openFileDialog1.FileName;  //this code uploads the music to the web server
                         client.Credentials = CredentialCache.DefaultCredentials;
-                        client.UploadFile(@"http://104.154.97.229:5000/analyseSong", "POST", myFile);
-                        client.Dispose();
+                        byte[] rawResponse = client.UploadFile(@"http://104.154.97.229:5000/analyseSong", "POST", myFile);
 
                         PnlMainMenu.Visible = false;
                         PnlListening.Visible = true;
                         PnlListening.BringToFront();
+
+                        string response = System.Text.Encoding.ASCII.GetString(rawResponse); //this code awaits a response from the web server
+
+                        MessageBox.Show(response);
+
+                        PnlListening.Visible = false;
+                        PnlListeningFound.Visible = true;
+                        PnlListeningFound.BringToFront();
+
                     }
                     catch (Exception err)
                     {
                         MessageBox.Show(err.Message);
                     }
 
-                   
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Security error.\n\nError message: {ex.Message}\n\n" +
-                    $"Details:\n\n{ex.StackTrace}");
-
-                }
-
-
-
-
+                    client.Dispose();
 
             }
             else
             {
-                MessageBox.Show("Either no file was selected or the file could not be used, please try again!");
+                MessageBox.Show("Either no file was selected or the file could not be used, please try again!");// this code si to make sure a fiel was selected before changing the panels
             }
-           
+
         }
 
-       
+
 
         private void BtnListeningBack_Click(object sender, EventArgs e)
         {
+            
             PnlListening.Visible = false;
             PnlMainMenu.Visible = true;
             PnlMainMenu.BringToFront();
+
         }
 
         private void BtnListeningFoundHelp_Click(object sender, EventArgs e)
@@ -123,8 +114,8 @@ namespace G22App1
             MessageBox.Show("The algorithm has returned with the result it has deduced. You can choose to add this to teh records by clicking the 'Add to Data' button, or you can expunge it and go back to the main menu by clicking the 'Go Back' button.");
         }
 
-      
-       
+
+
         private void LblListening_Click(object sender, EventArgs e)
         {
             PnlListening.Visible = false;
@@ -134,40 +125,38 @@ namespace G22App1
 
         private void BtnMainTheAlgorithmsDeductions_Click(object sender, EventArgs e)
         {
+            
+
             PnlMainMenu.Visible = false;
             PnlDeductions.Visible = true;
             PnlDeductions.BringToFront();
 
-            using (var reader = new StreamReader("deductions.csv"))
-            using (var csv = new CsvReader((IParser)reader))
-            {
-                var records = csv.GetRecords<csvFunctions>();
+            using (var reader = new StreamReader("Deductions.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
 
-                for (int x = 0; x == records.Count()-1; x ++)
+            {
+
+
+                csv.Read();
+                csv.ReadHeader();
+                while(csv.Read()) //this code will read the deductions.csv local file for the history of music put through the algorithm
                 {
-                    LstDeductions.Items.Add(records.ElementAt(x));
-                }
+                    string record = csv.GetField<string>("Name") + ", " + csv.GetField("Classification");
+                    this.LstDeductions.Items.Add(record);
+                };
+                   
+
+               
             }
 
         }
+        
 
         private void BtnDeductionsBack_Click(object sender, EventArgs e)
         {
+            PnlMainMenu.Visible = true;
+            PnlMainMenu.BringToFront();
             PnlDeductions.Visible = false;
-            PnlMainMenu.Visible = true;
-            PnlMainMenu.BringToFront();
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            //this is where the file would be passed onto the backend
-        }
-
-        private void BtnListeningBack_Click_1(object sender, EventArgs e)
-        {
-            PnlListening.Visible = false;
-            PnlMainMenu.Visible = true;
-            PnlMainMenu.BringToFront();
         }
 
         private void BtnListeningFoundBack_Click(object sender, EventArgs e)
@@ -179,7 +168,7 @@ namespace G22App1
 
         private void BtnFoundAdd_Click(object sender, EventArgs e)
         {
-
+            //once the resposne has been gained from the server, the results will be shown in a mesage box, after this the results can be saved to a .csv file.
         }
 
         private void BtnMainSettings_Click(object sender, EventArgs e)
@@ -206,6 +195,11 @@ namespace G22App1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Boo");
         }
     }
 }

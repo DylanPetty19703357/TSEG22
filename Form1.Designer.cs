@@ -130,11 +130,11 @@ namespace G22App1
             // 
             this.PnlMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.PnlMainMenu.Controls.Add(this.BtnMainTheAlgorithmsDeductions);
+            this.PnlMainMenu.Controls.Add(this.BtnMainListenToMusic);
             this.PnlMainMenu.Controls.Add(this.label2);
             this.PnlMainMenu.Controls.Add(this.BtnMainSettings);
             this.PnlMainMenu.Controls.Add(this.label1);
-            this.PnlMainMenu.Controls.Add(this.BtnMainListenToMusic);
-            this.PnlMainMenu.Location = new System.Drawing.Point(0, 0);
+            this.PnlMainMenu.Location = new System.Drawing.Point(1, 1);
             this.PnlMainMenu.Name = "PnlMainMenu";
             this.PnlMainMenu.Size = new System.Drawing.Size(394, 644);
             this.PnlMainMenu.TabIndex = 6;
@@ -148,7 +148,7 @@ namespace G22App1
             this.PnlDeductions.Controls.Add(this.LblDeductionsLogo);
             this.PnlDeductions.Controls.Add(this.BtnDeductionsBack);
             this.PnlDeductions.Controls.Add(this.LstDeductions);
-            this.PnlDeductions.Location = new System.Drawing.Point(3, 3);
+            this.PnlDeductions.Location = new System.Drawing.Point(1, 1);
             this.PnlDeductions.Name = "PnlDeductions";
             this.PnlDeductions.Size = new System.Drawing.Size(394, 644);
             this.PnlDeductions.TabIndex = 10;
@@ -229,7 +229,7 @@ namespace G22App1
             this.PnlListeningFound.Controls.Add(this.label10);
             this.PnlListeningFound.Controls.Add(this.BtnListeningFoundBack);
             this.PnlListeningFound.Controls.Add(this.BtnFoundAdd);
-            this.PnlListeningFound.Location = new System.Drawing.Point(3, 3);
+            this.PnlListeningFound.Location = new System.Drawing.Point(1, 1);
             this.PnlListeningFound.Name = "PnlListeningFound";
             this.PnlListeningFound.Size = new System.Drawing.Size(394, 644);
             this.PnlListeningFound.TabIndex = 10;
@@ -315,14 +315,13 @@ namespace G22App1
             // PnlListening
             // 
             this.PnlListening.BackColor = System.Drawing.Color.Aqua;
-            this.PnlListening.Controls.Add(this.PnlMainMenu);
             this.PnlListening.Controls.Add(this.pictureBox1);
             this.PnlListening.Controls.Add(this.LblListening);
             this.PnlListening.Controls.Add(this.label7);
             this.PnlListening.Controls.Add(this.BtnListeningSettings);
             this.PnlListening.Controls.Add(this.Lbl);
             this.PnlListening.Controls.Add(this.BtnListeningBack);
-            this.PnlListening.Location = new System.Drawing.Point(3, 3);
+            this.PnlListening.Location = new System.Drawing.Point(1, 1);
             this.PnlListening.Name = "PnlListening";
             this.PnlListening.Size = new System.Drawing.Size(394, 644);
             this.PnlListening.TabIndex = 9;
@@ -392,7 +391,7 @@ namespace G22App1
             this.BtnListeningBack.TabIndex = 2;
             this.BtnListeningBack.Text = "Go Back";
             this.BtnListeningBack.UseVisualStyleBackColor = false;
-            this.BtnListeningBack.Click += new System.EventHandler(this.BtnListeningBack_Click_1);
+            this.BtnListeningBack.Click += new System.EventHandler(this.BtnListeningBack_Click);
             // 
             // openFileDialog1
             // 
@@ -406,10 +405,11 @@ namespace G22App1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 651);
-            this.Controls.Add(this.PnlListening);
-            this.Controls.Add(this.PnlListeningFound);
+            this.ClientSize = new System.Drawing.Size(396, 648);
             this.Controls.Add(this.PnlDeductions);
+            this.Controls.Add(this.PnlMainMenu);
+            this.Controls.Add(this.PnlListeningFound);
+            this.Controls.Add(this.PnlListening);
             this.Name = "FormApp";
             this.Text = "Music Deductions";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -443,7 +443,7 @@ namespace G22App1
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button BtnListeningSettings;
         private System.Windows.Forms.Button BtnListeningBack;
-        private System.Windows.Forms.Panel PnlListening1;
+       // private System.Windows.Forms.Panel PnlListening1;
         private System.Windows.Forms.Label LblListening;
         private System.Windows.Forms.Panel PnlListeningFound;
         private System.Windows.Forms.PictureBox PicListeningFoundBack;
