@@ -45,7 +45,6 @@ namespace G22App1
             this.LstDeductions = new System.Windows.Forms.ListBox();
             this.PnlListeningFound = new System.Windows.Forms.Panel();
             this.LblListeningFound = new System.Windows.Forms.Label();
-            this.PicListeningFoundBack = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnListeningFoundHelp = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
@@ -59,12 +58,13 @@ namespace G22App1
             this.Lbl = new System.Windows.Forms.Label();
             this.BtnListeningBack = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnlMainMenu.SuspendLayout();
             this.PnlDeductions.SuspendLayout();
             this.PnlListeningFound.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicListeningFoundBack)).BeginInit();
             this.PnlListening.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnMainListenToMusic
@@ -222,8 +222,8 @@ namespace G22App1
             // PnlListeningFound
             // 
             this.PnlListeningFound.BackColor = System.Drawing.Color.Aqua;
+            this.PnlListeningFound.Controls.Add(this.pictureBox2);
             this.PnlListeningFound.Controls.Add(this.LblListeningFound);
-            this.PnlListeningFound.Controls.Add(this.PicListeningFoundBack);
             this.PnlListeningFound.Controls.Add(this.label9);
             this.PnlListeningFound.Controls.Add(this.BtnListeningFoundHelp);
             this.PnlListeningFound.Controls.Add(this.label10);
@@ -238,20 +238,11 @@ namespace G22App1
             // 
             this.LblListeningFound.AutoSize = true;
             this.LblListeningFound.Font = new System.Drawing.Font("Yu Gothic UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblListeningFound.Location = new System.Drawing.Point(120, 377);
+            this.LblListeningFound.Location = new System.Drawing.Point(123, 377);
             this.LblListeningFound.Name = "LblListeningFound";
             this.LblListeningFound.Size = new System.Drawing.Size(139, 50);
             this.LblListeningFound.TabIndex = 8;
             this.LblListeningFound.Text = "Found!";
-            // 
-            // PicListeningFoundBack
-            // 
-            this.PicListeningFoundBack.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.PicListeningFoundBack.Location = new System.Drawing.Point(62, 120);
-            this.PicListeningFoundBack.Name = "PicListeningFoundBack";
-            this.PicListeningFoundBack.Size = new System.Drawing.Size(263, 254);
-            this.PicListeningFoundBack.TabIndex = 6;
-            this.PicListeningFoundBack.TabStop = false;
             // 
             // label9
             // 
@@ -399,16 +390,25 @@ namespace G22App1
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.InitialDirectory = "\"C:\\\"";
             this.openFileDialog1.Title = "Browse Music Files";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(62, 135);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(261, 248);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(396, 648);
-            this.Controls.Add(this.PnlDeductions);
-            this.Controls.Add(this.PnlMainMenu);
             this.Controls.Add(this.PnlListeningFound);
+            this.Controls.Add(this.PnlMainMenu);
+            this.Controls.Add(this.PnlDeductions);
             this.Controls.Add(this.PnlListening);
             this.Name = "FormApp";
             this.Text = "Music Deductions";
@@ -419,10 +419,10 @@ namespace G22App1
             this.PnlDeductions.PerformLayout();
             this.PnlListeningFound.ResumeLayout(false);
             this.PnlListeningFound.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PicListeningFoundBack)).EndInit();
             this.PnlListening.ResumeLayout(false);
             this.PnlListening.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,7 +446,6 @@ namespace G22App1
        // private System.Windows.Forms.Panel PnlListening1;
         private System.Windows.Forms.Label LblListening;
         private System.Windows.Forms.Panel PnlListeningFound;
-        private System.Windows.Forms.PictureBox PicListeningFoundBack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button BtnListeningFoundHelp;
         private System.Windows.Forms.Label label10;
@@ -462,6 +461,7 @@ namespace G22App1
         private System.Windows.Forms.Button BtnFoundAdd;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

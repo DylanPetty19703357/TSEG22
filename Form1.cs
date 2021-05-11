@@ -12,6 +12,7 @@ using System.Net;
 using CsvHelper;
 using System.IO;
 using System.Globalization;
+using CsvHelper.Configuration;
 
 namespace G22App1
 {
@@ -19,6 +20,8 @@ namespace G22App1
 
     public partial class FormApp : Form
     {
+        public string response = "";
+        public string FileNameSave = "";
 
         private static readonly HttpClient client = new HttpClient();
 
@@ -65,22 +68,32 @@ namespace G22App1
 
                     try
                     {
-                        WebClient client = new WebClient();
+
+                    PnlMainMenu.Visible = false;
+                    PnlListening.Visible = true;
+                    PnlListening.BringToFront();
+
+                    WebClient client = new WebClient();
                         string myFile = openFileDialog1.FileName;  //this code uploads the music to the web server
+                        FileNameSave = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf("\\") + 1);
                         client.Credentials = CredentialCache.DefaultCredentials;
-                        byte[] rawResponse = client.UploadFile(@"http://104.154.97.229:5000/analyseSong", "POST", myFile);
+                        byte[] rawResponse = client.UploadFile(@"http://35.242.156.238:5000/analyseSong", "POST", myFile);
 
-                        PnlMainMenu.Visible = false;
-                        PnlListening.Visible = true;
-                        PnlListening.BringToFront();
-
-                        string response = System.Text.Encoding.ASCII.GetString(rawResponse); //this code awaits a response from the web server
-
-                        MessageBox.Show(response);
+                        string tempResponse = (System.Text.Encoding.ASCII.GetString(rawResponse));
 
                         PnlListening.Visible = false;
                         PnlListeningFound.Visible = true;
                         PnlListeningFound.BringToFront();
+
+                        response ="The result is " + FileNameSave + " as being " + tempResponse; //this code awaits a response from the web server
+
+                        
+                        MessageBox.Show(response);//once the resposne has been gained from the server, the results will be shown in a message box
+
+
+                        response = tempResponse;
+
+                       
 
                     }
                     catch (Exception err)
@@ -93,7 +106,7 @@ namespace G22App1
             }
             else
             {
-                MessageBox.Show("Either no file was selected or the file could not be used, please try again!");// this code si to make sure a fiel was selected before changing the panels
+                MessageBox.Show("Either no file was selected or the file could not be used, please try again!");// this code is to make sure a fiel was selected before changing the panels
             }
 
         }
@@ -125,8 +138,8 @@ namespace G22App1
 
         private void BtnMainTheAlgorithmsDeductions_Click(object sender, EventArgs e)
         {
-            
 
+            LstDeductions.Items.Clear();
             PnlMainMenu.Visible = false;
             PnlDeductions.Visible = true;
             PnlDeductions.BringToFront();
@@ -161,6 +174,9 @@ namespace G22App1
 
         private void BtnListeningFoundBack_Click(object sender, EventArgs e)
         {
+            response = ""; //this clears the varible storing the current response from the server
+            FileNameSave = "";
+
             PnlListeningFound.Visible = false;
             PnlMainMenu.Visible = true;
             PnlMainMenu.BringToFront();
@@ -168,7 +184,36 @@ namespace G22App1
 
         private void BtnFoundAdd_Click(object sender, EventArgs e)
         {
-            //once the resposne has been gained from the server, the results will be shown in a mesage box, after this the results can be saved to a .csv file.
+
+
+
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture) //after clocking 'Add To Data' the results will be saved to a .csv file.
+            {
+                HasHeaderRecord = false,
+            };
+            using (var stream = File.Open("Deductions.csv", FileMode.Append))
+            using (var writer = new StreamWriter(stream))
+            using (var csv = new CsvWriter(writer, config))
+            {
+                var obj = new List<csvFunctions> {
+
+                    new csvFunctions {Name = FileNameSave, Classification = response },//this code saves the fie naem and the classification to the Deductions.csv local file
+                };
+
+                csv.WriteRecords(obj);
+                writer.Flush();
+            }
+
+            response = "";
+            FileNameSave = "";
+            MessageBox.Show("Music added to history!");
+
+            response = ""; //this clears the varible storing the current response from the server
+            FileNameSave = "";
+
+            PnlListeningFound.Visible = false;
+            PnlMainMenu.Visible = true;
+            PnlMainMenu.BringToFront();
         }
 
         private void BtnMainSettings_Click(object sender, EventArgs e)
@@ -195,11 +240,6 @@ namespace G22App1
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Boo");
         }
     }
 }
