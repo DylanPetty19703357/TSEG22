@@ -19,9 +19,12 @@ def analyseSong():
 				return "415 - Restricted File Type"
 		File.save(File.filename)
     # Execute functions within the Machine learning python files
-		SongFeatures = features(FileName)
-		Prediction = predict(SongFeatures)
-		return Prediction # Return prediction or error
+		try:
+			SongFeatures = features(FileName)
+			Prediction = predict(SongFeatures)
+			return Prediction # Return prediction or error
+		except:
+			return "Invalid file"
 		
 
 #/pollResults&id=112344
