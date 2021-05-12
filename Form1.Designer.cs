@@ -44,6 +44,7 @@ namespace G22App1
             this.BtnDeductionsBack = new System.Windows.Forms.Button();
             this.LstDeductions = new System.Windows.Forms.ListBox();
             this.PnlListeningFound = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LblListeningFound = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.BtnListeningFoundHelp = new System.Windows.Forms.Button();
@@ -58,18 +59,17 @@ namespace G22App1
             this.Lbl = new System.Windows.Forms.Label();
             this.BtnListeningBack = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.PnlMainMenu.SuspendLayout();
             this.PnlDeductions.SuspendLayout();
             this.PnlListeningFound.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.PnlListening.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnMainListenToMusic
             // 
-            this.BtnMainListenToMusic.BackColor = System.Drawing.Color.Aqua;
+            this.BtnMainListenToMusic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(140)))));
             this.BtnMainListenToMusic.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnMainListenToMusic.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMainListenToMusic.Location = new System.Drawing.Point(51, 160);
@@ -82,7 +82,7 @@ namespace G22App1
             // 
             // BtnMainTheAlgorithmsDeductions
             // 
-            this.BtnMainTheAlgorithmsDeductions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.BtnMainTheAlgorithmsDeductions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(206)))), ((int)(((byte)(253)))));
             this.BtnMainTheAlgorithmsDeductions.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnMainTheAlgorithmsDeductions.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnMainTheAlgorithmsDeductions.Location = new System.Drawing.Point(51, 347);
@@ -97,7 +97,7 @@ namespace G22App1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bodoni MT Condensed", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(86, 23);
+            this.label1.Location = new System.Drawing.Point(69, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(229, 44);
             this.label1.TabIndex = 3;
@@ -105,12 +105,12 @@ namespace G22App1
             // 
             // BtnMainSettings
             // 
-            this.BtnMainSettings.BackColor = System.Drawing.Color.Red;
+            this.BtnMainSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(237)))), ((int)(((byte)(244)))));
             this.BtnMainSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnMainSettings.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnMainSettings.Location = new System.Drawing.Point(312, 70);
+            this.BtnMainSettings.Location = new System.Drawing.Point(304, 53);
             this.BtnMainSettings.Name = "BtnMainSettings";
-            this.BtnMainSettings.Size = new System.Drawing.Size(61, 41);
+            this.BtnMainSettings.Size = new System.Drawing.Size(90, 47);
             this.BtnMainSettings.TabIndex = 4;
             this.BtnMainSettings.Text = "Help";
             this.BtnMainSettings.UseVisualStyleBackColor = false;
@@ -128,7 +128,7 @@ namespace G22App1
             // 
             // PnlMainMenu
             // 
-            this.PnlMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.PnlMainMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(252)))), ((int)(((byte)(206)))));
             this.PnlMainMenu.Controls.Add(this.BtnMainTheAlgorithmsDeductions);
             this.PnlMainMenu.Controls.Add(this.BtnMainListenToMusic);
             this.PnlMainMenu.Controls.Add(this.label2);
@@ -141,7 +141,7 @@ namespace G22App1
             // 
             // PnlDeductions
             // 
-            this.PnlDeductions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.PnlDeductions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(206)))), ((int)(((byte)(253)))));
             this.PnlDeductions.Controls.Add(this.label4);
             this.PnlDeductions.Controls.Add(this.label8);
             this.PnlDeductions.Controls.Add(this.BtnDeductionsHelp);
@@ -175,12 +175,12 @@ namespace G22App1
             // 
             // BtnDeductionsHelp
             // 
-            this.BtnDeductionsHelp.BackColor = System.Drawing.Color.Red;
+            this.BtnDeductionsHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(237)))), ((int)(((byte)(244)))));
             this.BtnDeductionsHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnDeductionsHelp.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeductionsHelp.Location = new System.Drawing.Point(314, 70);
+            this.BtnDeductionsHelp.Location = new System.Drawing.Point(299, 47);
             this.BtnDeductionsHelp.Name = "BtnDeductionsHelp";
-            this.BtnDeductionsHelp.Size = new System.Drawing.Size(61, 41);
+            this.BtnDeductionsHelp.Size = new System.Drawing.Size(95, 52);
             this.BtnDeductionsHelp.TabIndex = 4;
             this.BtnDeductionsHelp.Text = "Help";
             this.BtnDeductionsHelp.UseVisualStyleBackColor = false;
@@ -190,7 +190,7 @@ namespace G22App1
             // 
             this.LblDeductionsLogo.AutoSize = true;
             this.LblDeductionsLogo.Font = new System.Drawing.Font("Bodoni MT Condensed", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblDeductionsLogo.Location = new System.Drawing.Point(71, 23);
+            this.LblDeductionsLogo.Location = new System.Drawing.Point(71, 18);
             this.LblDeductionsLogo.Name = "LblDeductionsLogo";
             this.LblDeductionsLogo.Size = new System.Drawing.Size(229, 44);
             this.LblDeductionsLogo.TabIndex = 3;
@@ -198,7 +198,7 @@ namespace G22App1
             // 
             // BtnDeductionsBack
             // 
-            this.BtnDeductionsBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnDeductionsBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(252)))), ((int)(((byte)(206)))));
             this.BtnDeductionsBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnDeductionsBack.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnDeductionsBack.Location = new System.Drawing.Point(62, 506);
@@ -221,7 +221,7 @@ namespace G22App1
             // 
             // PnlListeningFound
             // 
-            this.PnlListeningFound.BackColor = System.Drawing.Color.Aqua;
+            this.PnlListeningFound.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(140)))));
             this.PnlListeningFound.Controls.Add(this.pictureBox2);
             this.PnlListeningFound.Controls.Add(this.LblListeningFound);
             this.PnlListeningFound.Controls.Add(this.label9);
@@ -233,6 +233,16 @@ namespace G22App1
             this.PnlListeningFound.Name = "PnlListeningFound";
             this.PnlListeningFound.Size = new System.Drawing.Size(394, 644);
             this.PnlListeningFound.TabIndex = 10;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(62, 135);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(261, 248);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
             // 
             // LblListeningFound
             // 
@@ -256,12 +266,12 @@ namespace G22App1
             // 
             // BtnListeningFoundHelp
             // 
-            this.BtnListeningFoundHelp.BackColor = System.Drawing.Color.Red;
+            this.BtnListeningFoundHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(237)))), ((int)(((byte)(244)))));
             this.BtnListeningFoundHelp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnListeningFoundHelp.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnListeningFoundHelp.Location = new System.Drawing.Point(316, 70);
+            this.BtnListeningFoundHelp.Location = new System.Drawing.Point(303, 53);
             this.BtnListeningFoundHelp.Name = "BtnListeningFoundHelp";
-            this.BtnListeningFoundHelp.Size = new System.Drawing.Size(61, 41);
+            this.BtnListeningFoundHelp.Size = new System.Drawing.Size(91, 47);
             this.BtnListeningFoundHelp.TabIndex = 4;
             this.BtnListeningFoundHelp.Text = "Help";
             this.BtnListeningFoundHelp.UseVisualStyleBackColor = false;
@@ -271,7 +281,7 @@ namespace G22App1
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Bodoni MT Condensed", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(79, 23);
+            this.label10.Location = new System.Drawing.Point(68, 18);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(229, 44);
             this.label10.TabIndex = 3;
@@ -279,7 +289,7 @@ namespace G22App1
             // 
             // BtnListeningFoundBack
             // 
-            this.BtnListeningFoundBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnListeningFoundBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(252)))), ((int)(((byte)(206)))));
             this.BtnListeningFoundBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnListeningFoundBack.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnListeningFoundBack.Location = new System.Drawing.Point(62, 506);
@@ -305,7 +315,7 @@ namespace G22App1
             // 
             // PnlListening
             // 
-            this.PnlListening.BackColor = System.Drawing.Color.Aqua;
+            this.PnlListening.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(140)))));
             this.PnlListening.Controls.Add(this.pictureBox1);
             this.PnlListening.Controls.Add(this.LblListening);
             this.PnlListening.Controls.Add(this.label7);
@@ -350,12 +360,12 @@ namespace G22App1
             // 
             // BtnListeningSettings
             // 
-            this.BtnListeningSettings.BackColor = System.Drawing.Color.Red;
+            this.BtnListeningSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(145)))), ((int)(((byte)(237)))), ((int)(((byte)(244)))));
             this.BtnListeningSettings.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnListeningSettings.Font = new System.Drawing.Font("Tw Cen MT Condensed Extra Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnListeningSettings.Location = new System.Drawing.Point(312, 70);
+            this.BtnListeningSettings.Location = new System.Drawing.Point(295, 53);
             this.BtnListeningSettings.Name = "BtnListeningSettings";
-            this.BtnListeningSettings.Size = new System.Drawing.Size(61, 41);
+            this.BtnListeningSettings.Size = new System.Drawing.Size(99, 47);
             this.BtnListeningSettings.TabIndex = 4;
             this.BtnListeningSettings.Text = "Help";
             this.BtnListeningSettings.UseVisualStyleBackColor = false;
@@ -365,7 +375,7 @@ namespace G22App1
             // 
             this.Lbl.AutoSize = true;
             this.Lbl.Font = new System.Drawing.Font("Bodoni MT Condensed", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.Lbl.Location = new System.Drawing.Point(73, 23);
+            this.Lbl.Location = new System.Drawing.Point(71, 18);
             this.Lbl.Name = "Lbl";
             this.Lbl.Size = new System.Drawing.Size(229, 44);
             this.Lbl.TabIndex = 3;
@@ -373,7 +383,7 @@ namespace G22App1
             // 
             // BtnListeningBack
             // 
-            this.BtnListeningBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.BtnListeningBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(190)))), ((int)(((byte)(252)))), ((int)(((byte)(206)))));
             this.BtnListeningBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnListeningBack.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnListeningBack.Location = new System.Drawing.Point(62, 506);
@@ -391,21 +401,11 @@ namespace G22App1
             this.openFileDialog1.InitialDirectory = "\"C:\\\"";
             this.openFileDialog1.Title = "Browse Music Files";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(62, 135);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(261, 248);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
             // FormApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 648);
+            this.ClientSize = new System.Drawing.Size(397, 646);
             this.Controls.Add(this.PnlListeningFound);
             this.Controls.Add(this.PnlMainMenu);
             this.Controls.Add(this.PnlDeductions);
@@ -419,10 +419,10 @@ namespace G22App1
             this.PnlDeductions.PerformLayout();
             this.PnlListeningFound.ResumeLayout(false);
             this.PnlListeningFound.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.PnlListening.ResumeLayout(false);
             this.PnlListening.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
