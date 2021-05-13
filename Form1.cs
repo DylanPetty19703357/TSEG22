@@ -46,7 +46,7 @@ namespace G22App1
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                InitialDirectory = @"C:\",    //this code allows the user to browse their local files for a .ogg music file
+                InitialDirectory = @"C:\",    //this code allows the user to browse their local files for a .ogg music file 
                 Title = "Browse Music Files",
 
                 CheckFileExists = true,
