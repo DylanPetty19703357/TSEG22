@@ -1,0 +1,52 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "G22App1/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "27.0.2"
+        },
+        "runtime": {
+          "G22App1.dll": {}
+        }
+      },
+      "CsvHelper/27.0.2": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.0.2.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {}
+    }
+  },
+  "libraries": {
+    "G22App1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsvHelper/27.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BXIM6epjyGh0C73L6t4+EPl1kNiMSIkjkgNXco6USKmO8Dqa+Zw/vujYJwP9S/s51iaR7zZ90mQKHfp/iLfv6A==",
+      "path": "csvhelper/27.0.2",
+      "hashPath": "csvhelper.27.0.2.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+    }
+  }
+}
