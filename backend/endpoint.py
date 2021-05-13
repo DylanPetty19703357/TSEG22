@@ -13,7 +13,7 @@ def analyseSong():
 		File = request.files['file']  
 		FileName = File.filename
 		if FileName != '':
-			File_Ext = os.path.splittext(FileName)[1]
+			File_Ext = os.path.splitext(FileName)[1]
 			if File_Ext != ".ogg": # Ensure the file is only an .ogg - abort any other file types.
 				abort(415)
 				return "415 - Restricted File Type"
