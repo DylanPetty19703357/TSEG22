@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +46,7 @@ namespace G22App1
 
             OpenFileDialog openFileDialog1 = new OpenFileDialog
             {
-                InitialDirectory = @"C:\",    //this code allows the user to browse their local files for a .ogg music file
+                InitialDirectory = @"C:\",    //this code allows the user to browse their local files for a .ogg music file 
                 Title = "Browse Music Files",
 
                 CheckFileExists = true,
@@ -88,7 +88,7 @@ namespace G22App1
                         response ="The result is " + FileNameSave + " as being " + tempResponse; //this code awaits a response from the web server
 
                         
-                        MessageBox.Show(response);//once the resposne has been gained from the server, the results will be shown in a message box
+                        MessageBox.Show(response);//once the response has been gained from the server, the results will be shown in a message box
 
 
                         response = tempResponse;
@@ -187,7 +187,7 @@ namespace G22App1
 
 
 
-            var config = new CsvConfiguration(CultureInfo.InvariantCulture) //after clocking 'Add To Data' the results will be saved to a .csv file.
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture) //after clicking 'Add To Data' the results will be saved to a .csv file.
             {
                 HasHeaderRecord = false,
             };
@@ -197,7 +197,7 @@ namespace G22App1
             {
                 var obj = new List<csvFunctions> {
 
-                    new csvFunctions {Name = FileNameSave, Classification = response },//this code saves the fie naem and the classification to the Deductions.csv local file
+                    new csvFunctions {Name = FileNameSave, Classification = response },//this code saves the fie name and the classification to the Deductions.csv local file
                 };
 
                 csv.WriteRecords(obj);
